@@ -11,6 +11,7 @@ const cors=require('cors');
 const app=express();
 // estableciendo config
 app.use(cors());
+app.use(express.json());
 
 // crear  la conexion  BD
 dbConection();
@@ -19,13 +20,10 @@ dbConection();
 //console.log(process.env);
 
 // Crando las rutas de mi app
-app.get('/',(req,res)=>{
-    res.json({
-        ok:true,
-        msg: 'Bienvenidos a la App Proyectos'
-    });
-});
-
+ 
+//rutas api proyectos
+app.use('/api/usuarios',require ('./routes/usuarios.routes'));
+app.use('/api/login', require('./routes/auth.route'));
 
 
 // codigo para desplegar el servidor 
