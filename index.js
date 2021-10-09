@@ -23,7 +23,7 @@ dbConection();
  
 //rutas api proyectos
 app.use('/api/usuarios',require ('./routes/usuarios.routes'));
-app.use('/api/login', require('./routes/auth.route'));
+app.use('/api/login', require('./routes/auth.routes'));
 
 
 // codigo para desplegar el servidor 
